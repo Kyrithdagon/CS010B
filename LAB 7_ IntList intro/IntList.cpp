@@ -19,6 +19,7 @@ void IntList::clear(){
             head = head->next;
             delete hold;
         }
+        head = tail = nullptr;
     }
 }
 
@@ -39,6 +40,10 @@ void IntList::pop_front(){
         IntNode *hold = head->next;
         delete head;
         head = hold;
+
+        if(empty()){
+            head = tail = nullptr;
+        }
     }
 }
 
